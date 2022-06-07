@@ -11,18 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
-     services:
-      postgres:
-        image: postgres
-        env:
-          POSTGRES_USER: root
-          POSTGRES_PASSWORD: baoduong1011
-          POSTGRES_DB: simple_bank
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+     
 
     steps:
   
