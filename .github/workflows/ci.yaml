@@ -11,14 +11,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
-    services:
+     services:
       postgres:
-        image: postgres:14
-	env:
-	   POSTGRES_USER: root
-	   POSTGRES_PASSWORD: baoduong1011
-	   POSTGRES_DB: simple_bank
-       
+        image: postgres
+        env:
+          POSTGRES_USER: root
+          POSTGRES_PASSWORD: baoduong1011
+          POSTGRES_DB: simple_bank
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -26,18 +25,17 @@ jobs:
           --health-retries 5
 
     steps:
-
+  
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
         go-version: 1.18
 
-    - name: Check out code into the Go module directory
+    - name: Check out code into the Go module diẻctory
       uses: actions/checkout@v3
 
-    - name: Run Migration
+    - name: Run Migrations
       uses: make migrateup
 
     - name: Test
       run: make test
-
