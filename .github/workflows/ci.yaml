@@ -12,20 +12,20 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
 
-    services:
-      postgres:
-        image: postgres:14-alpine
-        env:
-          POSTGRES_USER: root
-          POSTGRES_PASSWORD: baoduong1011
-          POSTGRES_DB: simple_bank
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+    # services:
+    #   postgres:
+    #     image: postgres:14-alpine
+    #     env:
+    #       POSTGRES_USER: root
+    #       POSTGRES_PASSWORD: baoduong1011
+    #       POSTGRES_DB: simple_bank
+    #     ports:
+    #       - 5432:5432
+    #     options: >-
+    #       --health-cmd pg_isready
+    #       --health-interval 10s
+    #       --health-timeout 5s
+    #       --health-retries 5
     
     steps:
   
@@ -37,15 +37,15 @@ jobs:
     - name: Check out code into the Go module diẻctory
       uses: actions/checkout@v3
 
-    - name: Install Golang - Migrate
-      run: | 
-        curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate.linux-amd64.tar.gz | tar xvz
-        sudo mv migrate.linux-amd64 /usr/bin/migrate
-        which migrate
+    # - name: Install Golang - Migrate
+    #   run: | 
+    #     curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate.linux-amd64.tar.gz | tar xvz
+    #     sudo mv migrate.linux-amd64 /usr/bin/migrate
+    #     which migrate
 
 
-    - name: Run Migrations
-      uses: make migrateup
+    # - name: Run Migrations
+    #   uses: make migrateup
     
 
     - name: Test
