@@ -43,11 +43,8 @@ jobs:
         sudo mv LICENSE README.md migrate /usr/bin/
         which migrate
       
-
-
-    - name: Run Migrations
+    - name: Run migrations
       uses: make migrateup
     
-
     - name: Test
       run: make test
