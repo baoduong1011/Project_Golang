@@ -1,4 +1,4 @@
-postgres:
+erpostgres:
 	docker run --name postgres14 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=baoduong1011 -d postgres:14-alpine
 	# Start postgres server on docker
 createdb:
