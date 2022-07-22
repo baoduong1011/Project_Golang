@@ -16,7 +16,7 @@ type SQLStore struct {
 	*Queries
 	db *sql.DB
 	// create a new database transaction
-}
+} 
 
 // create Store
 func NewStore(db *sql.DB) *SQLStore {
